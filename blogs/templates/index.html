@@ -1,0 +1,901 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}DevBlogs | Build. Learn. Share.{% endblock title %}
+
+{% block content %}
+
+<!-- =========================================================
+     HERO SECTION
+     ========================================================= -->
+
+<section class="relative overflow-hidden bg-[#171717] text-white">
+
+    <!-- Decorative background -->
+    <div class="absolute inset-0 pointer-events-none">
+
+        <div
+            class="absolute -top-32 -right-32
+                   w-96 h-96 rounded-full
+                   bg-gold-400/10 blur-3xl">
+        </div>
+
+        <div
+            class="absolute -bottom-40 -left-40
+                   w-96 h-96 rounded-full
+                   bg-gold-700/10 blur-3xl">
+        </div>
+
+        <div
+            class="absolute inset-0 opacity-[0.035]"
+            style="
+                background-image:
+                linear-gradient(#ffffff 1px, transparent 1px),
+                linear-gradient(90deg, #ffffff 1px, transparent 1px);
+                background-size: 40px 40px;
+            ">
+        </div>
+
+    </div>
+
+
+    <div
+        class="relative max-w-7xl mx-auto px-6
+               py-24 md:py-32 lg:py-36"
+    >
+
+        <div class="max-w-4xl">
+
+            <!-- Eyebrow -->
+            <div class="flex items-center gap-3 mb-7">
+
+                <span class="h-px w-12 bg-gold-400"></span>
+
+                <span
+                    class="text-gold-400 text-sm font-semibold
+                           uppercase tracking-[0.25em]"
+                >
+                    The Developer Journal
+                </span>
+
+            </div>
+
+
+            <!-- Main heading -->
+            <h1
+                class="font-display text-5xl md:text-6xl
+                       lg:text-7xl font-bold
+                       leading-[1.05]"
+            >
+                Ideas that help you
+                <span class="text-gold-400">
+                    build better software.
+                </span>
+            </h1>
+
+
+            <!-- Description -->
+            <p
+                class="mt-8 max-w-2xl
+                       text-lg md:text-xl
+                       leading-8 text-gray-400"
+            >
+                Practical tutorials, engineering insights and
+                development lessons for people building real-world
+                software.
+            </p>
+
+
+            <!-- CTA buttons -->
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+
+                <a
+                    href="/blogs"
+                    class="inline-flex items-center justify-center
+                           gap-2 px-7 py-3.5
+                           rounded-lg
+                           bg-gold-400
+                           text-[#171717]
+                           font-semibold
+                           hover:bg-gold-300
+                           transition
+                           shadow-lg shadow-gold-900/20"
+                >
+
+                    Explore Articles
+
+                    <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                    </svg>
+
+                </a>
+
+
+                <a
+                    href="/about"
+                    class="inline-flex items-center
+                           justify-center
+                           px-7 py-3.5
+                           rounded-lg
+                           border border-gray-700
+                           text-gray-300
+                           font-semibold
+                           hover:border-gold-400
+                           hover:text-gold-400
+                           transition"
+                >
+                    Learn About DevBlogs
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hero bottom stats -->
+        <div
+            class="mt-20 pt-8
+                   border-t border-gray-800
+                   grid grid-cols-2 md:grid-cols-4
+                   gap-8"
+        >
+
+            <div>
+                <p class="text-2xl font-bold text-white">
+                    Practical
+                </p>
+                <p class="mt-1 text-sm text-gray-500">
+                    Hands-on content
+                </p>
+            </div>
+
+            <div>
+                <p class="text-2xl font-bold text-white">
+                    Developer
+                </p>
+                <p class="mt-1 text-sm text-gray-500">
+                    Focused insights
+                </p>
+            </div>
+
+            <div>
+                <p class="text-2xl font-bold text-white">
+                    Modern
+                </p>
+                <p class="mt-1 text-sm text-gray-500">
+                    Technologies
+                </p>
+            </div>
+
+            <div>
+                <p class="text-2xl font-bold text-white">
+                    Real-World
+                </p>
+                <p class="mt-1 text-sm text-gray-500">
+                    Development
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURED ARTICLES
+     ========================================================= -->
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+    <div
+        class="flex flex-col md:flex-row
+               md:items-end md:justify-between
+               gap-5 mb-10"
+    >
+
+        <div>
+
+            <p
+                class="text-sm font-semibold
+                       uppercase tracking-widest
+                       text-gold-600"
+            >
+                Featured Reading
+            </p>
+
+            <h2
+                class="mt-2 font-display
+                       text-3xl md:text-4xl
+                       font-bold text-gray-900"
+            >
+                Explore the latest thinking
+            </h2>
+
+            <p class="mt-3 text-gray-500 max-w-xl">
+                Discover practical articles covering the tools,
+                concepts and techniques developers use to build
+                modern applications.
+            </p>
+
+        </div>
+
+
+        <a
+            href="/blogs"
+            class="inline-flex items-center gap-2
+                   text-sm font-semibold
+                   text-gold-700
+                   hover:text-gold-900
+                   transition"
+        >
+            View all articles
+
+            <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+            </svg>
+
+        </a>
+
+    </div>
+
+
+    {% if posts %}
+
+        <div
+            class="grid grid-cols-1
+                   md:grid-cols-2
+                   lg:grid-cols-3
+                   gap-8"
+        >
+
+            {% for post in posts|slice:":3" %}
+
+                <article
+                    class="blog-card bg-white
+                           border border-gray-200
+                           rounded-2xl overflow-hidden"
+                >
+
+                    <!-- Card header -->
+                    <div
+                        class="h-36
+                               bg-[#171717]
+                               relative overflow-hidden"
+                    >
+
+                        <div
+                            class="absolute -right-10 -top-10
+                                   w-32 h-32
+                                   rounded-full
+                                   border border-gold-400/20"
+                        ></div>
+
+                        <div
+                            class="absolute right-6 bottom-6
+                                   text-5xl font-bold
+                                   text-gold-400/10"
+                        >
+                            {{ forloop.counter|stringformat:"02d" }}
+                        </div>
+
+                        <div class="absolute bottom-6 left-6">
+
+                            <span
+                                class="text-xs font-semibold
+                                       uppercase tracking-widest
+                                       text-gold-400"
+                            >
+                                Featured Article
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Card body -->
+                    <div class="p-7">
+
+                        <h3
+                            class="font-display text-2xl
+                                   font-bold text-gray-900
+                                   leading-tight"
+                        >
+                            {{ post.title }}
+                        </h3>
+
+
+                        <p
+                            class="mt-4 text-gray-600
+                                   leading-7"
+                        >
+                            {{ post.content|capfirst|truncatewords:22 }}
+                        </p>
+
+
+                        <div
+                            class="mt-7 pt-5
+                                   border-t border-gray-100"
+                        >
+
+                            <a
+                                href="{% url 'blog_detail' post.slug %}"
+                                class="inline-flex items-center
+                                       gap-2 text-sm
+                                       font-semibold
+                                       text-gold-700
+                                       hover:text-gold-900
+                                       group"
+                            >
+
+                                Read Article
+
+                                <svg
+                                    class="w-4 h-4
+                                           transition-transform
+                                           group-hover:translate-x-1"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                                    />
+                                </svg>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    {% else %}
+
+        <div
+            class="rounded-2xl
+                   border border-gray-200
+                   bg-white
+                   py-16 text-center"
+        >
+
+            <h3
+                class="font-display text-2xl
+                       font-bold text-gray-900"
+            >
+                No articles yet
+            </h3>
+
+            <p class="mt-2 text-gray-500">
+                New developer articles will appear here soon.
+            </p>
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+
+<!-- =========================================================
+     TOPICS SECTION
+     ========================================================= -->
+
+<section class="bg-gray-50 border-y border-gray-200">
+
+    <div class="max-w-7xl mx-auto px-6 py-20">
+
+        <div class="max-w-2xl mb-12">
+
+            <p
+                class="text-sm font-semibold
+                       uppercase tracking-widest
+                       text-gold-600"
+            >
+                What You'll Find
+            </p>
+
+            <h2
+                class="mt-2 font-display
+                       text-3xl md:text-4xl
+                       font-bold text-gray-900"
+            >
+                Learn across the stack
+            </h2>
+
+            <p class="mt-4 text-gray-500 leading-7">
+                From backend architecture to frontend development,
+                explore concepts that help turn ideas into working
+                software.
+            </p>
+
+        </div>
+
+
+        <div
+            class="grid grid-cols-1
+                   sm:grid-cols-2
+                   lg:grid-cols-4
+                   gap-5"
+        >
+
+            <!-- Topic 1 -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-6
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           flex items-center justify-center
+                           text-gold-700 mb-5"
+                >
+                    <span class="font-bold">01</span>
+                </div>
+
+                <h3 class="font-bold text-gray-900">
+                    Backend
+                </h3>
+
+                <p class="mt-2 text-sm text-gray-500 leading-6">
+                    Django, APIs, databases, authentication
+                    and server-side development.
+                </p>
+
+            </div>
+
+
+            <!-- Topic 2 -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-6
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           flex items-center justify-center
+                           text-gold-700 mb-5"
+                >
+                    <span class="font-bold">02</span>
+                </div>
+
+                <h3 class="font-bold text-gray-900">
+                    Frontend
+                </h3>
+
+                <p class="mt-2 text-sm text-gray-500 leading-6">
+                    Modern interfaces, responsive design,
+                    JavaScript and frontend architecture.
+                </p>
+
+            </div>
+
+
+            <!-- Topic 3 -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-6
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           flex items-center justify-center
+                           text-gold-700 mb-5"
+                >
+                    <span class="font-bold">03</span>
+                </div>
+
+                <h3 class="font-bold text-gray-900">
+                    DevOps
+                </h3>
+
+                <p class="mt-2 text-sm text-gray-500 leading-6">
+                    CI/CD, containers, cloud infrastructure
+                    and deployment practices.
+                </p>
+
+            </div>
+
+
+            <!-- Topic 4 -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-6
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           flex items-center justify-center
+                           text-gold-700 mb-5"
+                >
+                    <span class="font-bold">04</span>
+                </div>
+
+                <h3 class="font-bold text-gray-900">
+                    Engineering
+                </h3>
+
+                <p class="mt-2 text-sm text-gray-500 leading-6">
+                    Software architecture, clean code,
+                    testing and engineering practices.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY DEVBLOGS
+     ========================================================= -->
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+    <div
+        class="grid grid-cols-1
+               lg:grid-cols-2
+               gap-14 items-center"
+    >
+
+        <!-- Text -->
+        <div>
+
+            <div class="flex items-center gap-3 mb-5">
+
+                <span class="h-px w-10 bg-gold-400"></span>
+
+                <span
+                    class="text-sm font-semibold
+                           uppercase tracking-widest
+                           text-gold-600"
+                >
+                    Why DevBlogs
+                </span>
+
+            </div>
+
+
+            <h2
+                class="font-display
+                       text-3xl md:text-4xl
+                       font-bold text-gray-900
+                       leading-tight"
+            >
+                Less theory.
+                <br>
+                More building.
+            </h2>
+
+
+            <p
+                class="mt-6 text-gray-600
+                       leading-8 max-w-xl"
+            >
+                Software development becomes easier to understand
+                when concepts are connected to real problems.
+                DevBlogs focuses on practical knowledge that you
+                can take from the page and apply to your projects.
+            </p>
+
+
+            <div class="mt-8 space-y-5">
+
+                <div class="flex gap-4">
+
+                    <div
+                        class="flex-shrink-0
+                               w-8 h-8 rounded-full
+                               bg-gold-100
+                               text-gold-700
+                               flex items-center justify-center
+                               font-bold"
+                    >
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-gray-900">
+                            Practical explanations
+                        </h3>
+
+                        <p class="mt-1 text-sm text-gray-500">
+                            Concepts explained with real development
+                            scenarios and examples.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="flex gap-4">
+
+                    <div
+                        class="flex-shrink-0
+                               w-8 h-8 rounded-full
+                               bg-gold-100
+                               text-gold-700
+                               flex items-center justify-center
+                               font-bold"
+                    >
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-gray-900">
+                            Developer-focused content
+                        </h3>
+
+                        <p class="mt-1 text-sm text-gray-500">
+                            Focused on the tools, patterns and
+                            workflows developers actually use.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="flex gap-4">
+
+                    <div
+                        class="flex-shrink-0
+                               w-8 h-8 rounded-full
+                               bg-gold-100
+                               text-gold-700
+                               flex items-center justify-center
+                               font-bold"
+                    >
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-gray-900">
+                            Built for continuous learning
+                        </h3>
+
+                        <p class="mt-1 text-sm text-gray-500">
+                            Learn something useful today and
+                            build something better tomorrow.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Visual -->
+        <div class="relative">
+
+            <div
+                class="relative bg-[#171717]
+                       rounded-2xl p-8
+                       overflow-hidden
+                       shadow-2xl"
+            >
+
+                <!-- Decorative gold -->
+                <div
+                    class="absolute -top-16 -right-16
+                           w-48 h-48 rounded-full
+                           border border-gold-400/20"
+                ></div>
+
+                <div
+                    class="absolute -bottom-20 -left-20
+                           w-56 h-56 rounded-full
+                           border border-gold-400/10"
+                ></div>
+
+
+                <!-- Code-like content -->
+                <div class="relative">
+
+                    <div class="flex items-center gap-2 mb-8">
+
+                        <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-400"></span>
+
+                    </div>
+
+
+                    <div class="font-mono text-sm leading-8">
+
+                        <p class="text-gray-500">
+                            // Build something meaningful
+                        </p>
+
+                        <p>
+                            <span class="text-purple-400">
+                                const
+                            </span>
+
+                            <span class="text-white">
+                                developer
+                            </span>
+
+                            <span class="text-gray-400">
+                                =
+                            </span>
+
+                            <span class="text-gold-400">
+                                "curious"
+                            </span>;
+                        </p>
+
+                        <p class="mt-4">
+                            <span class="text-purple-400">
+                                while
+                            </span>
+
+                            <span class="text-gray-400">
+                                (learning)
+                            </span>
+                            {
+                        </p>
+
+                        <p class="pl-6 text-gray-300">
+                            build();
+                        </p>
+
+                        <p class="pl-6 text-gray-300">
+                            breakThings();
+                        </p>
+
+                        <p class="pl-6 text-gray-300">
+                            learn();
+                        </p>
+
+                        <p class="pl-6 text-gray-300">
+                            improve();
+                        </p>
+
+                        <p class="text-gray-400">
+                            }
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL CTA
+     ========================================================= -->
+
+<section class="bg-[#171717] text-white">
+
+    <div
+        class="max-w-5xl mx-auto
+               px-6 py-20
+               text-center"
+    >
+
+        <span
+            class="inline-block
+                   text-gold-400 text-sm
+                   font-semibold uppercase
+                   tracking-[0.2em]"
+        >
+            Start Exploring
+        </span>
+
+
+        <h2
+            class="mt-4
+                   font-display
+                   text-3xl md:text-5xl
+                   font-bold"
+        >
+            There is always something
+            <span class="text-gold-400">
+                new to build.
+            </span>
+        </h2>
+
+
+        <p
+            class="mt-5 max-w-2xl mx-auto
+                   text-gray-400
+                   leading-7"
+        >
+            Dive into practical developer content and discover
+            ideas you can apply to your next project.
+        </p>
+
+
+        <div class="mt-8">
+
+            <a
+                href="/blogs"
+                class="inline-flex items-center
+                       gap-2 px-8 py-4
+                       rounded-lg
+                       bg-gold-400
+                       text-[#171717]
+                       font-semibold
+                       hover:bg-gold-300
+                       transition"
+            >
+
+                Browse the Blog
+
+                <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                </svg>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock content %}

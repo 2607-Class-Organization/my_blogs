@@ -1,0 +1,473 @@
+{% extends "base.html" %}
+
+{% block title %}About | DevBlogs{% endblock title %}
+
+{% block content %}
+
+<!-- =====================================================
+     ABOUT HERO
+     ===================================================== -->
+
+<section class="bg-[#171717] text-white">
+
+    <div class="max-w-7xl mx-auto px-6 py-20 md:py-28">
+
+        <div class="max-w-4xl">
+
+            <!-- Label -->
+            <div class="flex items-center gap-3 mb-6">
+
+                <span class="h-px w-10 bg-gold-400"></span>
+
+                <span
+                    class="text-sm font-semibold uppercase
+                           tracking-[0.2em] text-gold-400"
+                >
+                    About DevBlogs
+                </span>
+
+            </div>
+
+
+            <!-- Heading -->
+            <h1
+                class="font-display text-4xl md:text-5xl
+                       lg:text-6xl font-bold leading-tight"
+            >
+                A place to
+                <span class="text-gold-400">
+                    learn, build and share.
+                </span>
+            </h1>
+
+
+            <p
+                class="mt-7 max-w-2xl
+                       text-lg leading-8 text-gray-400"
+            >
+                DevBlogs is a developer-focused platform for practical
+                software engineering knowledge, tutorials and ideas.
+                We believe that the best way to understand technology
+                is to build with it.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR STORY
+     ===================================================== -->
+
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+    <div
+        class="grid grid-cols-1 lg:grid-cols-2
+               gap-14 items-start"
+    >
+
+        <!-- Story -->
+        <div>
+
+            <p
+                class="text-sm font-semibold uppercase
+                       tracking-widest text-gold-600"
+            >
+                Our Story
+            </p>
+
+            <h2
+                class="mt-3 font-display
+                       text-3xl md:text-4xl
+                       font-bold text-gray-900"
+            >
+                Built around practical learning
+            </h2>
+
+            <div
+                class="mt-6 space-y-5
+                       text-gray-600 leading-8"
+            >
+
+                <p>
+                    Software development is a constantly evolving field.
+                    New frameworks, tools and practices appear every day,
+                    but strong fundamentals remain essential.
+                </p>
+
+                <p>
+                    DevBlogs brings these two worlds together by exploring
+                    modern technologies while keeping the focus on
+                    understanding the underlying concepts.
+                </p>
+
+                <p>
+                    Our articles are designed to move beyond simply
+                    showing code. The goal is to understand why a
+                    particular approach works, when to use it and how
+                    it fits into a larger software system.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Philosophy card -->
+        <div
+            class="bg-[#171717] rounded-2xl
+                   p-8 md:p-10 text-white
+                   relative overflow-hidden"
+        >
+
+            <div
+                class="absolute -top-20 -right-20
+                       w-48 h-48 rounded-full
+                       border border-gold-400/20"
+            ></div>
+
+            <div
+                class="relative"
+            >
+
+                <span
+                    class="text-gold-400 text-sm
+                           font-semibold uppercase
+                           tracking-widest"
+                >
+                    Our Philosophy
+                </span>
+
+                <blockquote
+                    class="mt-6 font-display
+                           text-2xl md:text-3xl
+                           leading-relaxed"
+                >
+                    "Don't just learn how the code works.
+                    Understand the problem it solves."
+                </blockquote>
+
+                <div
+                    class="mt-8 h-px w-16
+                           bg-gold-400"
+                ></div>
+
+                <p
+                    class="mt-6 text-gray-400
+                           leading-7"
+                >
+                    Every article should leave you with something
+                    you can understand, experiment with and apply.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     WHAT WE COVER
+     ===================================================== -->
+
+<section
+    class="bg-gray-50 border-y border-gray-200"
+>
+
+    <div class="max-w-7xl mx-auto px-6 py-20">
+
+        <div class="max-w-2xl mb-12">
+
+            <p
+                class="text-sm font-semibold uppercase
+                       tracking-widest text-gold-600"
+            >
+                What We Cover
+            </p>
+
+            <h2
+                class="mt-3 font-display
+                       text-3xl md:text-4xl
+                       font-bold text-gray-900"
+            >
+                Across the software stack
+            </h2>
+
+        </div>
+
+
+        <div
+            class="grid grid-cols-1 sm:grid-cols-2
+                   lg:grid-cols-3 gap-6"
+        >
+
+            <!-- Backend -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-7
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           text-gold-700
+                           flex items-center justify-center
+                           font-bold mb-5"
+                >
+                    01
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900">
+                    Backend Development
+                </h3>
+
+                <p
+                    class="mt-3 text-sm text-gray-500
+                           leading-6"
+                >
+                    APIs, Django, Python, databases,
+                    authentication and server-side architecture.
+                </p>
+
+            </div>
+
+
+            <!-- Frontend -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-7
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           text-gold-700
+                           flex items-center justify-center
+                           font-bold mb-5"
+                >
+                    02
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900">
+                    Frontend Development
+                </h3>
+
+                <p
+                    class="mt-3 text-sm text-gray-500
+                           leading-6"
+                >
+                    HTML, CSS, JavaScript, responsive interfaces
+                    and modern frontend development.
+                </p>
+
+            </div>
+
+
+            <!-- DevOps -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-7
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           text-gold-700
+                           flex items-center justify-center
+                           font-bold mb-5"
+                >
+                    03
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900">
+                    DevOps & Cloud
+                </h3>
+
+                <p
+                    class="mt-3 text-sm text-gray-500
+                           leading-6"
+                >
+                    Containers, CI/CD, cloud infrastructure,
+                    deployment and automation.
+                </p>
+
+            </div>
+
+
+            <!-- Databases -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-7
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           text-gold-700
+                           flex items-center justify-center
+                           font-bold mb-5"
+                >
+                    04
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900">
+                    Databases
+                </h3>
+
+                <p
+                    class="mt-3 text-sm text-gray-500
+                           leading-6"
+                >
+                    SQL, relational database design,
+                    NoSQL and data persistence.
+                </p>
+
+            </div>
+
+
+            <!-- Testing -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-7
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           text-gold-700
+                           flex items-center justify-center
+                           font-bold mb-5"
+                >
+                    05
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900">
+                    Testing
+                </h3>
+
+                <p
+                    class="mt-3 text-sm text-gray-500
+                           leading-6"
+                >
+                    Unit testing, integration testing,
+                    debugging and quality practices.
+                </p>
+
+            </div>
+
+
+            <!-- Engineering -->
+            <div
+                class="bg-white border border-gray-200
+                       rounded-xl p-7
+                       hover:border-gold-400
+                       transition"
+            >
+
+                <div
+                    class="w-11 h-11 rounded-lg
+                           bg-gold-100
+                           text-gold-700
+                           flex items-center justify-center
+                           font-bold mb-5"
+                >
+                    06
+                </div>
+
+                <h3 class="text-xl font-bold text-gray-900">
+                    Software Engineering
+                </h3>
+
+                <p
+                    class="mt-3 text-sm text-gray-500
+                           leading-6"
+                >
+                    Clean code, architecture, design patterns
+                    and maintainable software.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+
+<section class="bg-[#171717] text-white">
+
+    <div
+        class="max-w-4xl mx-auto px-6
+               py-20 text-center"
+    >
+
+        <h2
+            class="font-display text-3xl md:text-4xl
+                   font-bold"
+        >
+            Ready to start building?
+        </h2>
+
+        <p
+            class="mt-4 text-gray-400
+                   leading-7"
+        >
+            Explore the latest articles and find your next
+            development idea.
+        </p>
+
+        <a
+            href="/blogs"
+            class="inline-flex items-center gap-2
+                   mt-8 px-7 py-3.5
+                   rounded-lg
+                   bg-gold-400
+                   text-[#171717]
+                   font-semibold
+                   hover:bg-gold-300
+                   transition"
+        >
+            Explore the Blog
+
+            <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+            </svg>
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock content %}

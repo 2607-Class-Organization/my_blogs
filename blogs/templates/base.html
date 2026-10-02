@@ -1,0 +1,156 @@
+{% comment %} DevBlogs Base Template {% endcomment %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}DevBlogs{% endblock title %}</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#fffdf5',
+                            100: '#faf3d8',
+                            200: '#f3e5a8',
+                            300: '#ead477',
+                            400: '#dfbd43',
+                            500: '#c9a227',
+                            600: '#b18a1d',
+                            700: '#8d6c17',
+                            800: '#725617',
+                            900: '#604919',
+                        },
+                        charcoal: '#171717',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    {% block extra_head %}{% endblock extra_head %}
+</head>
+
+<body class="bg-[#fafafa] text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    {% include "navbar.html" %}
+
+    <!-- Main Content -->
+    <main class="min-h-screen">
+        {% block content %}{% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#171717] text-gray-400 mt-20">
+
+        <!-- Gold accent line -->
+        <div class="h-1 bg-gradient-to-r from-gold-700 via-gold-400 to-gold-700"></div>
+
+        <div class="max-w-7xl mx-auto px-6 py-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+                <!-- Brand -->
+                <div>
+                    <h2 class="font-display text-2xl font-bold text-white">
+                        Dev<span class="text-gold-400">Blogs</span>
+                    </h2>
+
+                    <p class="mt-4 text-sm leading-7 text-gray-400 max-w-sm">
+                        Practical insights, tutorials and ideas for developers
+                        building modern software.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-gold-400">
+                        Explore
+                    </h3>
+
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li>
+                            <a href="#"
+                               class="transition hover:text-gold-400">
+                                Latest Posts
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="transition hover:text-gold-400">
+                                Categories
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#"
+                               class="transition hover:text-gold-400">
+                                About
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Tech Stack -->
+                <div>
+                    <h3 class="text-sm font-semibold uppercase tracking-widest text-gold-400">
+                        Built With
+                    </h3>
+
+                    <p class="mt-4 text-sm leading-7 text-gray-400">
+                        Django · Python · Tailwind CSS
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Bottom Footer -->
+            <div class="mt-10 pt-6 border-t border-gray-800
+                        flex flex-col md:flex-row
+                        items-center justify-between gap-4">
+
+                <p class="text-xs text-gray-500">
+                    &copy; 2026 DevBlogs. All rights reserved.
+                </p>
+
+                <p class="text-xs text-gray-500">
+                    Built with
+                    <span class="text-gold-400 font-medium">Django</span>
+                    &amp;
+                    <span class="text-gold-400 font-medium">Passion</span>.
+                </p>
+
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>

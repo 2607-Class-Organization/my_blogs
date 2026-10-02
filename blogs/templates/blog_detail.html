@@ -1,0 +1,421 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} | DevBlogs{% endblock title %}
+
+{% block content %}
+
+<!-- =====================================================
+     ARTICLE HEADER
+     ===================================================== -->
+
+<section class="bg-[#171717] text-white">
+
+    <div class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 text-sm mb-8">
+
+            <a
+                href="{% url 'blogs' %}"
+                class="text-gray-400 hover:text-gold-400 transition"
+            >
+                Blogs
+            </a>
+
+            <!-- Chevron Right -->
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4 text-gray-600"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="1.8"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m9 5 7 7-7 7"
+                />
+            </svg>
+
+            <span class="text-gold-400">
+                Article
+            </span>
+
+        </div>
+
+
+        <!-- Gold label -->
+        <div class="flex items-center gap-3 mb-6">
+
+            <span class="h-px w-10 bg-gold-400"></span>
+
+            <span
+                class="text-gold-400 text-sm font-semibold
+                       uppercase tracking-[0.2em]"
+            >
+                DevBlogs
+            </span>
+
+        </div>
+
+
+        <!-- Article title -->
+        <h1
+            class="font-display text-4xl md:text-5xl lg:text-6xl
+                   font-bold leading-tight max-w-4xl"
+        >
+            {{ post.title }}
+        </h1>
+
+
+        <!-- Category -->
+        {% if post.category %}
+
+        <div class="mt-6">
+
+            <span
+                class="inline-flex items-center gap-2
+                       px-3 py-1.5
+                       rounded-full
+                       bg-gold-400/10
+                       border border-gold-400/20
+                       text-gold-400
+                       text-xs font-semibold
+                       uppercase tracking-wider"
+            >
+
+                <!-- Tag Icon -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-3.5 h-3.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9.568 3.5H5.25A1.75 1.75 0 0 0 3.5 5.25v4.318
+                           c0 .464.184.91.512 1.238l8.382 8.382
+                           a1.75 1.75 0 0 0 2.475 0l5.999-5.999
+                           a1.75 1.75 0 0 0 0-2.475L12.486 4.012
+                           A1.75 1.75 0 0 0 11.25 3.5H9.568Z"
+                    />
+
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7.75 7.75h.008"
+                    />
+
+                </svg>
+
+                {{ post.category.name }}
+
+            </span>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- Article metadata -->
+        <div
+            class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-4
+                   text-sm text-gray-400"
+        >
+
+            <!-- Author -->
+            <div class="flex items-center gap-2">
+
+                <!-- User Icon -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 text-gold-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M15.75 6.75a3.75 3.75 0 1 1-7.5 0
+                           3.75 3.75 0 0 1 7.5 0Z"
+                    />
+
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M4.5 20.25a7.5 7.5 0 0 1 15 0"
+                    />
+                </svg>
+
+                <span>
+                    {{ post.user.username }}
+                </span>
+
+            </div>
+
+
+            <!-- Separator -->
+            <span class="hidden sm:block text-gray-700">
+                •
+            </span>
+
+
+            <!-- Published Date -->
+            <div class="flex items-center gap-2">
+
+                <!-- Calendar Icon -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 text-gold-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 3v2.25M17.25 3v2.25M3.75 9.75h16.5"
+                    />
+
+                    <rect
+                        x="3.75"
+                        y="5.25"
+                        width="16.5"
+                        height="15"
+                        rx="2"
+                    />
+
+                </svg>
+
+                <span>
+                    {% if post.published_at %}
+                        {{ post.published_at|date:"M d, Y" }}
+                    {% else %}
+                        {{ post.created_at|date:"M d, Y" }}
+                    {% endif %}
+                </span>
+
+            </div>
+
+
+            <!-- Separator -->
+            <span class="hidden sm:block text-gray-700">
+                •
+            </span>
+
+
+            <!-- Views -->
+            <div class="flex items-center gap-2">
+
+                <!-- Eye Icon -->
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 text-gold-400"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.25 12s3.75-6 9.75-6 9.75 6 9.75 6
+                           -3.75 6-9.75 6-9.75-6-9.75-6Z"
+                    />
+
+                    <circle
+                        cx="12"
+                        cy="12"
+                        r="2.5"
+                    />
+
+                </svg>
+
+                <span>
+                    {{ post.views }} views
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ARTICLE CONTENT
+     ===================================================== -->
+
+<main class="max-w-4xl mx-auto px-6 py-14 md:py-20">
+
+    <article>
+
+        <!-- Excerpt -->
+        {% if post.excerpt %}
+
+        <div
+            class="mb-10
+                   border-l-4 border-gold-400
+                   pl-6"
+        >
+
+            <p
+                class="text-xl md:text-2xl
+                       text-gray-600
+                       leading-relaxed
+                       font-medium"
+            >
+                {{ post.excerpt }}
+            </p>
+
+        </div>
+
+        {% endif %}
+
+
+        <!-- Article content -->
+        <div class="blog-content text-gray-700 text-lg">
+
+            {{ post.content|linebreaks }}
+
+        </div>
+
+
+        <!-- =================================================
+             ARTICLE ACTIONS
+             ================================================= -->
+
+        <div class="mt-14 pt-8 border-t border-gray-200">
+
+            <div
+                class="flex flex-col sm:flex-row
+                       items-start sm:items-center
+                       justify-between gap-6"
+            >
+
+                <!-- Left Actions -->
+                <div class="flex flex-wrap items-center gap-4">
+
+                    <!-- Back to blogs -->
+                    <a
+                        href="{% url 'blogs' %}"
+                        class="inline-flex items-center gap-2
+                               text-sm font-semibold
+                               text-gray-700
+                               hover:text-gold-700
+                               transition
+                               group"
+                    >
+
+                        <!-- Arrow Left -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-4 h-4 transition-transform
+                                   group-hover:-translate-x-1"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                            />
+                        </svg>
+
+                        Back to Articles
+
+                    </a>
+
+
+                    <!-- Edit Post -->
+                    {% if user.is_authenticated and user == post.user %}
+
+                    <a
+                        href="{% url 'edit_post' post.id %}"
+                        class="inline-flex items-center gap-2
+                               rounded-lg
+                               border border-gray-300
+                               px-4 py-2
+                               text-sm font-semibold
+                               text-gray-700
+                               hover:border-gold-400
+                               hover:text-gold-700
+                               hover:bg-gold-50
+                               transition
+                               group"
+                    >
+
+                        <!-- Pencil Icon -->
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-4 h-4 transition-transform
+                                   group-hover:rotate-[-8deg]"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="m16.862 4.487 1.687-1.688
+                                   a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07
+                                   a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685
+                                   a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Z"
+                            />
+
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M19.5 7.5 16.5 4.5"
+                            />
+
+                        </svg>
+
+                        Edit Post
+
+                    </a>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Branding -->
+                <div class="flex items-center gap-2">
+
+                    <div
+                        class="w-8 h-8 rounded-lg
+                               bg-gold-400 text-[#171717]
+                               flex items-center justify-center
+                               font-bold text-sm"
+                    >
+                        D
+                    </div>
+
+                    <span class="text-sm font-semibold text-gray-500">
+                        Dev<span class="text-gold-600">Blogs</span>
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</main>
+
+{% endblock content %}
