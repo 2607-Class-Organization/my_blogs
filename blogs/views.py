@@ -23,9 +23,9 @@ def blogs(request):
     posts = Post.objects.all()# SELECT * FROM posts
     return render(request, 'blogs.html', {"posts": posts})
 
-def blog_detail(request, slug):
+def blog_detail(request, post_id):
     # post = Post.objects.get(id=post_id)
-    post = get_object_or_404(Post, slug=slug)
+    post = get_object_or_404(Post, id=post_id)
     return render(request, "blog_detail.html", {"post": post})
 
 @login_required
@@ -43,7 +43,7 @@ def create_post(request):
 
     return render(
         request,
-        "blogs/post_form.html",
+        "post_form.html",
         {
             "form": form,
             "page_title": "Create Post",

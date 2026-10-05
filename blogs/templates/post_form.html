@@ -259,7 +259,7 @@
 
 
                     <a
-                        href="{% if post %}{% url 'blog_detail' post.id %}{% else %}{% url 'blog_list' %}{% endif %}"
+                        href="{% if post %}{% url 'edit_post' post.id %}{% else %}{% url 'blogs' %}{% endif %}"
                         class="inline-flex items-center justify-center
                                rounded-lg border border-gray-300
                                px-6 py-3

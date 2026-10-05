@@ -1,12 +1,10 @@
 from django import forms
 from .models import Post
 
-
 class PostForm(forms.ModelForm):
-
     class Meta:
         model = Post
-
+        
         fields = [
             "title",
             "excerpt",
@@ -14,11 +12,11 @@ class PostForm(forms.ModelForm):
             "category",
             "status",
             "published_at",
-            "featured",
+            "featured"
         ]
-
+        
         widgets = {
-            "title": forms.TextInput(
+           "title": forms.TextInput(
                 attrs={
                     "class": "w-full rounded-lg border border-gray-300 px-4 py-3 focus:border-gold-500 focus:ring-gold-500",
                     "placeholder": "Enter post title",
