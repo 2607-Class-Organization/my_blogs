@@ -1,8 +1,22 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
+from django.urls import reverse
 
 # CREATE TABLE category (name, slug, description, created_at, updated_at)
+class Author(models.Model):
+    """Model representing an author"""
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    
+    def get_absolute_url(self):
+        return reverse("author_detail", args=[str(self.id)])
+    
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+    
+    
 class Category(models.Model):
     name = models.CharField(
         max_length=100,
