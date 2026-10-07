@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.text import slugify
 from django.urls import reverse
+from cloudinary.models import CloudinaryField
 
 # CREATE TABLE category (name, slug, description, created_at, updated_at)
 class Author(models.Model):
@@ -94,6 +95,8 @@ class Post(models.Model):
     )
 
     content = models.TextField()
+    
+    image = CloudinaryField("image", null=True)
 
     # Publication
     status = models.CharField(
@@ -138,3 +141,10 @@ class Post(models.Model):
         ordering = ["-created_at"]
         verbose_name = "Post"
         verbose_name_plural = "Posts"
+        
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.email        

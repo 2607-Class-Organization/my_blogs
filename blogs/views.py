@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from .models import Post
-from .forms import PostForm
+from .models import Post, Subscriber
+from .forms import PostForm, SubscribeForm
+from django.views.decorators.http import require_http_methods
+from django.contrib import messages
 
 # Create your views here.
 def contact(request):
@@ -31,7 +33,7 @@ def blog_detail(request, post_id):
 @login_required
 def create_post(request):
     if request.method == "POST":
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)
             # Assign the currently logged-in user.
@@ -79,7 +81,18 @@ def edit_post(request, post_id):
         },
     )
 
-# try:
+@require_http_methods(['GET', 'POST'])
+def subscribe(request):
+    form = SubscribeForm(request.POST or None)
+    if request.method == 'POST' and form.is_valid():
+        email = form.cleaned_data['email'].strip().lower()
+        if Subscriber.objects.filter(email=email).exists():
+            messages.info(request, 'You are already subscribed.')
+        else:
+            Subscriber.objects.create(email=email)
+            messages.success(request, 'Thanks for subscribing. You are on the list!')
+            return redirect('subscribe')
+    return render(request, 'subscribe.html', {'form': form})
 #     post = Post.objects.get(id=post_id)
 # except Post.DoesNotExist:
 #     raise Http404    
