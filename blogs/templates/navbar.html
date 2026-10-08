@@ -109,6 +109,18 @@
                         Contact
                     </a>
                 </li>
+                 {% if user.is_authenticated %}
+                <li>
+                  <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="text-white hover:text-gray-300">Logout</button>
+                  </form>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}" class="text-white hover:text-gray-300">Login</a>
+                </li>
+            {% endif %}
 
             </ul>
 

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block title %}Registration Complete | DevBlogs{% endblock title %}
+
+{% block content %}
+
+<section class="min-h-[75vh] flex items-center justify-center px-6 py-20">
+    <div class="w-full max-w-2xl text-center">
+
+```
+    <!-- Success Icon -->
+    <div class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gold-100 ring-8 ring-gold-50">
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-10 w-10 text-gold-600"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+        >
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M5 13l4 4L19 7"
+            />
+        </svg>
+    </div>
+
+    <!-- Heading -->
+    <h1 class="mt-8 font-display text-4xl font-bold text-charcoal sm:text-5xl">
+        Registration Complete
+    </h1>
+
+    <!-- Gold Divider -->
+    <div class="mx-auto mt-6 h-1 w-20 rounded-full bg-gradient-to-r from-gold-700 via-gold-400 to-gold-700"></div>
+
+    <!-- Message -->
+    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
+        Welcome to <span class="font-semibold text-gold-600">DevBlogs</span>.
+        Your account has been successfully created.
+    </p>
+
+    <p class="mx-auto mt-3 max-w-lg text-sm leading-7 text-gray-500">
+        You can now sign in and start exploring practical tutorials,
+        developer insights, and ideas for building modern software.
+    </p>
+
+    <!-- Actions -->
+    <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+        <a
+            href="{% url 'login' %}"
+            class="inline-flex w-full items-center justify-center rounded-lg
+                   bg-[#171717] px-7 py-3.5 text-sm font-semibold
+                   text-white shadow-lg transition
+                   hover:bg-gold-600 sm:w-auto"
+        >
+            Sign In
+        </a>
+
+        <a
+            href="/"
+            class="inline-flex w-full items-center justify-center rounded-lg
+                   border border-gold-400 px-7 py-3.5 text-sm font-semibold
+                   text-gold-700 transition
+                   hover:bg-gold-50 sm:w-auto"
+        >
+            Explore DevBlogs
+        </a>
+
+    </div>
+
+    <!-- Bottom Note -->
+    <div class="mx-auto mt-12 max-w-md border-t border-gray-200 pt-6">
+        <p class="text-sm text-gray-500">
+            Ready to learn, build, and grow?
+            <span class="font-medium text-gold-600">
+                Let's get started.
+            </span>
+        </p>
+    </div>
+
+</div>
+```
+
+</section>
+
+{% endblock content %}
