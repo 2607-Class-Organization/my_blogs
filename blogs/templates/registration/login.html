@@ -39,6 +39,16 @@
   <p class="text-center text-sm text-gray-600">
     <a href="{% url 'password_reset' %}" class="text-indigo-600 hover:text-indigo-800">Forgot password?</a>
   </p>
+  <p class="text-center text-sm text-gray-600">
+    <a href="{% url 'account_signup' %}" class="text-indigo-600 hover:text-indigo-800">Don't have an account?</a>
+  </p>
+
+   {% if google_login_enabled %}
+            <div class="mt-7 border-t border-slate-200 pt-6">
+                <p class="mb-4 text-center text-xs uppercase tracking-widest text-slate-500">Or continue with</p>
+                <a href="{% provider_login_url 'google' %}" class="block border border-slate-300 px-4 py-3 text-center text-sm font-semibold text-slate-700 transition hover:border-indigo-500 hover:text-indigo-700">Continue with Google</a>
+            </div>
+        {% endif %}
   </div>
 </div>
 {% endblock %}

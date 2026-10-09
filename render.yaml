@@ -1,0 +1,37 @@
+services:
+    - type: web
+      name: django-app-name # Set a unique name for your web service
+      env: python
+      # Use a standard plan for production, 'free' for testing/learning
+      plan: starter 
+      # Region is optional, defaults to a fast region
+      # region: oregon 
+      
+      # The build command runs once during deployment setup
+      buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+      
+      # The start command runs constantly to serve the application
+      # IMPORTANT: Replace 'your_project_name' with the name of the folder 
+      # that contains your settings.py (the one with the wsgi.py file).
+      startCommand: "gunicorn your_project_name.wsgi:application"
+      
+      envVars:
+          - key: DJANGO_SECRET_KEY
+            value: your-secure-secret-key-goes-here # RENDER: Replace with a strong secret key
+          # RENDER: The DATABASE_URL environment variable is automatically set 
+          # from the connected database resource defined below.
+          - key: DATABASE_URL
+            fromDatabase:
+                name: django-db-prod 
+                property: connectionString
+          - key: WEB_CONCURRENCY
+            value: 4 # Recommended for a Starter plan for Gunicorn workers
+          - key: PYTHON_VERSION
+            value: 3.11.x # Specify a modern Python version
+
+databases:
+    - name: django-db-prod # Set a unique name for your database
+      plan: starter # Use 'starter' or higher for production
+      databaseName: django_prod_db
+      user: django_user
+      # postgresVersion: 16 # Use a modern version
